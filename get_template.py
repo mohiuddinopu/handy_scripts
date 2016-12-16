@@ -13,7 +13,7 @@ print cwd
 
 
 resource = ApiResource(hostname, 7180, "admin", "admin", version=12)
-cluster = resource.get_cluster("Cluster 1")
+cluster = resource.get_all_clusters()[0]
 template = cluster.export()
 with open( cwd + '/template.json', 'w') as outfile:
    json.dump(template.to_json_dict(), outfile, indent=4, sort_keys=True)
